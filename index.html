@@ -3,43 +3,688 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- css links -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/index.css">
-    <title>Document</title>
+    <title>InnovateX - Invention Competition</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: '#FFD700',
+                        darkgold: '#D4AF37',
+                        silver: '#C0C0C0',
+                        darksilver: '#A8A8A8',
+                        primary: '#1A1A1A',
+                        secondary: '#2D2D2D',
+                        accent: '#4A148C'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-text {
+            background: linear-gradient(90deg, #FFD700, #C0C0C0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .section-divider {
+            height: 100px;
+            background: linear-gradient(to bottom, #1A1A1A, transparent);
+        }
+        
+        .flip-card {
+            perspective: 1000px;
+        }
+        
+        .flip-card-inner {
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+        
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        
+        .flip-card-front, .flip-card-back {
+            backface-visibility: hidden;
+        }
+        
+        .flip-card-back {
+            transform: rotateY(180deg);
+        }
+        
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
 </head>
-<body>
-    <div id="root">
-        <header class="top-bar">
-            <div class="top-bar-holder">
-                <div class="mcLogo">
-                    <img id="logo" src="imgs/MC logo.png" alt="MCLogo">
+<body class="bg-primary text-gray-200 font-sans">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-black bg-opacity-90 z-50 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-xl font-bold gradient-text">INNOVATEX</span>
                 </div>
-                <div class="sections"></div>
-                <div class="riduLogo">
-                    <img id="logo" src="imgs/RID logo.png" alt="RIDULogo">
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gold hover:text-darkgold transition">Home</a>
+                    <a href="#about" class="text-silver hover:text-darksilver transition">About</a>
+                    <a href="#process" class="text-silver hover:text-darksilver transition">Process</a>
+                    <a href="#prizes" class="text-silver hover:text-darksilver transition">Prizes</a>
+                    <a href="#register" class="text-gold hover:text-darkgold transition">Register</a>
+                    <a href="#credits" class="text-silver hover:text-darksilver transition">Credits</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="menuBtn" class="text-gold focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
                 </div>
             </div>
-        </header>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-secondary pb-4 px-4">
+            <a href="#home" class="block py-2 text-gold">Home</a>
+            <a href="#about" class="block py-2 text-silver">About</a>
+            <a href="#process" class="block py-2 text-silver">Process</a>
+            <a href="#prizes" class="block py-2 text-silver">Prizes</a>
+            <a href="#register" class="block py-2 text-gold">Register</a>
+            <a href="#credits" class="block py-2 text-silver">Credits</a>
+        </div>
+    </nav>
 
-        <div class="container">
-            <section id="home">
-                <div class="element-container">
-                    <div class="text-container">
-                        <h1>INNOWIN '25</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum assumenda, dolorum at corporis et nostrum maiores ab! Beatae laudantium rem commodi temporibus itaque numquam excepturi sint obcaecati officiis. Fugiat, consequatur?</p>
-                        <div class="buttons">
-                            <a id="learnMore" href="#">Learn More</a>
-                            <a id="register" href="#">Register</a>
+    <!-- Hero Section -->
+    <section id="home" class="pt-24 pb-32 px-4 sm:px-6 lg:px-8 parallax" style="background-image: linear-gradient(rgba(26, 26, 26, 0.8), rgba(26, 26, 26, 0.8)), url('https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');">
+        <div class="max-w-7xl mx-auto text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 gradient-text">INNOVATEX 2023</h1>
+            <h2 class="text-2xl md:text-3xl font-semibold text-silver mb-8">Global Invention Competition & Exhibition</h2>
+            <p class="text-lg md:text-xl max-w-3xl mx-auto mb-10">Showcase your groundbreaking inventions to the world and compete for prestigious awards and recognition from industry leaders.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#register" class="bg-gold hover:bg-darkgold text-primary font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">Register Now</a>
+                <a href="#about" class="border border-silver hover:border-gold text-silver hover:text-gold font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 bg-secondary">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gold mb-4">About The Competition</h2>
+                <div class="w-20 h-1 bg-silver mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-2xl font-semibold text-silver mb-4">Celebrating Innovation</h3>
+                    <p class="text-gray-300 mb-6">InnovateX is the premier global competition for inventors, innovators, and creative thinkers. Our mission is to recognize and reward groundbreaking ideas that have the potential to shape the future.</p>
+                    <p class="text-gray-300 mb-6">Since our inception in 2010, we've helped launch over 200 inventions into successful products and businesses. This year's competition promises to be our biggest yet, with expanded categories and increased prize money.</p>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-gold mr-2 mt-1"></i>
+                            <span>Open to individuals and teams worldwide</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-gold mr-2 mt-1"></i>
+                            <span>Multiple categories covering all fields of innovation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-gold mr-2 mt-1"></i>
+                            <span>Judged by industry experts and successful inventors</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="relative">
+                    <div class="bg-primary p-2 rounded-lg shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Inventors working" class="rounded-lg w-full h-auto">
+                    </div>
+                    <div class="absolute -bottom-6 -right-6 bg-accent text-white p-4 rounded-lg shadow-lg w-3/4">
+                        <h4 class="font-bold text-gold mb-2">Key Dates</h4>
+                        <p class="text-sm">Registration Deadline: Oct 15, 2023</p>
+                        <p class="text-sm">Submission Deadline: Nov 30, 2023</p>
+                        <p class="text-sm">Exhibition & Awards: Dec 15-17, 2023</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="py-20 px-4 sm:px-6 lg:px-8 bg-primary">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gold mb-4">How It Works</h2>
+                <div class="w-20 h-1 bg-silver mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Step 1 -->
+                <div class="flip-card h-64">
+                    <div class="flip-card-inner h-full">
+                        <div class="flip-card-front bg-secondary rounded-lg p-6 shadow-lg flex flex-col items-center justify-center h-full">
+                            <div class="text-gold text-4xl mb-4 font-bold">1</div>
+                            <h3 class="text-xl font-semibold text-silver mb-2">Register</h3>
+                            <p class="text-gray-300 text-center">Complete the online registration form and pay the entry fee.</p>
+                        </div>
+                        <div class="flip-card-back bg-accent rounded-lg p-6 shadow-lg flex flex-col items-center justify-center h-full">
+                            <h3 class="text-xl font-semibold text-gold mb-2">Registration Details</h3>
+                            <p class="text-gray-200 text-sm text-center">Early bird registration: $50 (until Sep 30)<br>Regular registration: $75<br>Student discount available</p>
                         </div>
                     </div>
-                    <div class="divider"></div>
-                    <div class="image-container"></div>
                 </div>
-            </section>
+                
+                <!-- Step 2 -->
+                <div class="flip-card h-64">
+                    <div class="flip-card-inner h-full">
+                        <div class="flip-card-front bg-secondary rounded-lg p-6 shadow-lg flex flex-col items-center justify-center h-full">
+                            <div class="text-gold text-4xl mb-4 font-bold">2</div>
+                            <h3 class="text-xl font-semibold text-silver mb-2">Submit</h3>
+                            <p class="text-gray-300 text-center">Upload your invention details, prototype photos/videos, and documentation.</p>
+                        </div>
+                        <div class="flip-card-back bg-accent rounded-lg p-6 shadow-lg flex flex-col items-center justify-center h-full">
+                            <h3 class="text-xl font-semibold text-gold mb-2">Submission Requirements</h3>
+                            <p class="text-gray-200 text-sm text-center">Detailed description (PDF)<br>High-quality images/videos<br>Technical specifications<br>Potential impact statement</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="flip-card h-64">
+                    <div class="flip-card-inner h-full">
+                        <div class="flip-card-front bg-secondary rounded-lg p-6 shadow-lg flex flex-col items-center justify-center h-full">
+                            <div class="text-gold text-4xl mb-4 font-bold">3</div>
+                            <h3 class="text-xl font-semibold text-silver mb-2">Exhibit</h3>
+                            <p class="text-gray-300 text-center">Present your invention at our global exhibition event.</p>
+                        </div>
+                        <div class="flip-card-back bg-accent rounded-lg p-6 shadow-lg flex flex-col items-center justify-center h-full">
+                            <h3 class="text-xl font-semibold text-gold mb-2">Exhibition Details</h3>
+                            <p class="text-gray-200 text-sm text-center">3-day event in New York City<br>Networking with investors<br>Media coverage<br>Public voting component</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16 bg-gradient-to-r from-accent to-secondary rounded-xl p-8 shadow-xl">
+                <h3 class="text-2xl font-bold text-gold mb-4 text-center">Judging Criteria</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-primary bg-opacity-50 p-4 rounded-lg">
+                        <div class="text-gold text-2xl mb-2"><i class="fas fa-lightbulb"></i></div>
+                        <h4 class="font-semibold text-silver mb-2">Originality</h4>
+                        <p class="text-gray-300 text-sm">How unique and novel is the invention?</p>
+                    </div>
+                    <div class="bg-primary bg-opacity-50 p-4 rounded-lg">
+                        <div class="text-gold text-2xl mb-2"><i class="fas fa-chart-line"></i></div>
+                        <h4 class="font-semibold text-silver mb-2">Impact</h4>
+                        <p class="text-gray-300 text-sm">Potential to solve real-world problems</p>
+                    </div>
+                    <div class="bg-primary bg-opacity-50 p-4 rounded-lg">
+                        <div class="text-gold text-2xl mb-2"><i class="fas fa-cogs"></i></div>
+                        <h4 class="font-semibold text-silver mb-2">Feasibility</h4>
+                        <p class="text-gray-300 text-sm">Practical implementation potential</p>
+                    </div>
+                    <div class="bg-primary bg-opacity-50 p-4 rounded-lg">
+                        <div class="text-gold text-2xl mb-2"><i class="fas fa-dollar-sign"></i></div>
+                        <h4 class="font-semibold text-silver mb-2">Market Potential</h4>
+                        <p class="text-gray-300 text-sm">Commercial viability and scalability</p>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-    
+    </section>
+
+    <!-- Prizes Section -->
+    <section id="prizes" class="py-20 px-4 sm:px-6 lg:px-8 bg-secondary">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gold mb-4">Prizes & Benefits</h2>
+                <div class="w-20 h-1 bg-silver mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <!-- Gold Prize -->
+                <div class="relative bg-gradient-to-b from-gold to-darkgold rounded-xl overflow-hidden shadow-2xl transform transition duration-500 hover:scale-105">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-primary"></div>
+                    <div class="p-8 text-center">
+                        <div class="text-5xl font-bold text-primary mb-2">1st</div>
+                        <h3 class="text-2xl font-bold text-primary mb-4">Gold Innovation Award</h3>
+                        <div class="text-4xl font-bold text-primary mb-6">$50,000</div>
+                        <ul class="space-y-3 text-primary text-left">
+                            <li class="flex items-start">
+                                <i class="fas fa-check mr-2 mt-1"></i>
+                                <span>Exclusive media coverage</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check mr-2 mt-1"></i>
+                                <span>Patent filing assistance</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check mr-2 mt-1"></i>
+                                <span>Mentorship program</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check mr-2 mt-1"></i>
+                                <span>Investor introductions</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Silver Prize -->
+                <div class="relative bg-gradient-to-b from-silver to-darksilver rounded-xl overflow-hidden shadow-2xl transform transition duration-500 hover:scale-105">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-primary"></div>
+                    <div class="p-8 text-center">
+                        <div class="text-5xl font-bold text-primary mb-2">2nd</div>
+                        <h3 class="text-2xl font-bold text-primary mb-4">Silver Innovation Award</h3>
+                        <div class="text-4xl font-bold text-primary mb-6">$25,000</div>
+                        <ul class="space-y-3 text-primary text-left">
+                            <li class="flex items-start">
+                                <i class="fas fa-check mr-2 mt-1"></i>
+                                <span>Featured media coverage</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check mr-2 mt-1"></i>
+                                <span>Patent consultation</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check mr-2 mt-1"></i>
+                                <span>Workshop access</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check mr-2 mt-1"></i>
+                                <span>Networking opportunities</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Bronze Prize -->
+                <div class="relative bg-gradient-to-b from-amber-600 to-amber-800 rounded-xl overflow-hidden shadow-2xl transform transition duration-500 hover:scale-105">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-primary"></div>
+                    <div class="p-8 text-center">
+                        <div class="text-5xl font-bold text-primary mb-2">3rd</div>
+                        <h3 class="text-2xl font-bold text-primary mb-4">Bronze Innovation Award</h3>
+                        <div class="text-4xl font-bold text-primary mb-6">$10,000</div>
+                        <ul class="space-y-3 text-primary text-left">
+                            <li class="flex items-start">
+                                <i class="fas fa-check mr-2 mt-1"></i>
+                                <span>Media mention</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check mr-2 mt-1"></i>
+                                <span>IP guidance</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check mr-2 mt-1"></i>
+                                <span>Resource package</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check mr-2 mt-1"></i>
+                                <span>Exhibition space</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-primary rounded-xl p-8 shadow-lg">
+                <h3 class="text-2xl font-bold text-gold mb-6 text-center">Additional Opportunities</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="flex items-start">
+                        <div class="text-gold text-xl mr-4"><i class="fas fa-handshake"></i></div>
+                        <div>
+                            <h4 class="font-semibold text-silver mb-1">Investor Network</h4>
+                            <p class="text-gray-300 text-sm">Access to our global network of angel investors and VCs</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="text-gold text-xl mr-4"><i class="fas fa-newspaper"></i></div>
+                        <div>
+                            <h4 class="font-semibold text-silver mb-1">Media Exposure</h4>
+                            <p class="text-gray-300 text-sm">Featured in our annual innovation report</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="text-gold text-xl mr-4"><i class="fas fa-graduation-cap"></i></div>
+                        <div>
+                            <h4 class="font-semibold text-silver mb-1">Education</h4>
+                            <p class="text-gray-300 text-sm">Free access to inventor education resources</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="text-gold text-xl mr-4"><i class="fas fa-trophy"></i></div>
+                        <div>
+                            <h4 class="font-semibold text-silver mb-1">Special Awards</h4>
+                            <p class="text-gray-300 text-sm">Category-specific awards and recognitions</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section id="register" class="py-20 px-4 sm:px-6 lg:px-8 bg-primary">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gold mb-4">Ready to Innovate?</h2>
+                <div class="w-20 h-1 bg-silver mx-auto"></div>
+            </div>
+            
+            <div class="bg-secondary rounded-xl shadow-xl overflow-hidden">
+                <div class="grid md:grid-cols-2">
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-gold mb-6">Registration Form</h3>
+                        <form id="registrationForm" class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-silver mb-2">Full Name</label>
+                                <input type="text" id="name" class="w-full bg-primary border border-silver rounded-lg px-4 py-2 text-gray-200 focus:outline-none focus:ring-2 focus:ring-gold">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-silver mb-2">Email Address</label>
+                                <input type="email" id="email" class="w-full bg-primary border border-silver rounded-lg px-4 py-2 text-gray-200 focus:outline-none focus:ring-2 focus:ring-gold">
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-silver mb-2">Phone Number</label>
+                                <input type="tel" id="phone" class="w-full bg-primary border border-silver rounded-lg px-4 py-2 text-gray-200 focus:outline-none focus:ring-2 focus:ring-gold">
+                            </div>
+                            <div>
+                                <label for="category" class="block text-silver mb-2">Invention Category</label>
+                                <select id="category" class="w-full bg-primary border border-silver rounded-lg px-4 py-2 text-gray-200 focus:outline-none focus:ring-2 focus:ring-gold">
+                                    <option value="">Select a category</option>
+                                    <option value="technology">Technology & Electronics</option>
+                                    <option value="medical">Medical & Health</option>
+                                    <option value="environment">Environmental Solutions</option>
+                                    <option value="education">Educational Tools</option>
+                                    <option value="consumer">Consumer Products</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="flex items-start">
+                                    <input type="checkbox" class="mt-1 mr-2 bg-primary border border-silver rounded focus:ring-gold">
+                                    <span class="text-gray-300 text-sm">I agree to the competition terms and conditions</span>
+                                </label>
+                            </div>
+                            <button type="submit" class="w-full bg-gold hover:bg-darkgold text-primary font-bold py-3 px-4 rounded-lg transition duration-300">Submit Registration</button>
+                        </form>
+                    </div>
+                    <div class="bg-accent p-8 flex flex-col justify-center">
+                        <h3 class="text-2xl font-bold text-gold mb-4">Need Help?</h3>
+                        <p class="text-gray-200 mb-6">Our team is here to assist you with the registration process or answer any questions about the competition.</p>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <i class="fas fa-envelope text-gold mr-3 mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold text-silver">Email Us</h4>
+                                    <p class="text-gray-200 text-sm">support@innovex.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-phone text-gold mr-3 mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold text-silver">Call Us</h4>
+                                    <p class="text-gray-200 text-sm">+1 (555) 123-4567</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-clock text-gold mr-3 mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold text-silver">Hours</h4>
+                                    <p class="text-gray-200 text-sm">Monday-Friday: 9AM-5PM EST</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 bg-gradient-to-r from-accent to-secondary rounded-xl p-8 shadow-lg">
+                <h3 class="text-2xl font-bold text-gold mb-4 text-center">Frequently Asked Questions</h3>
+                <div class="space-y-4">
+                    <div class="border-b border-silver border-opacity-30 pb-4">
+                        <button class="faq-btn flex justify-between items-center w-full text-left focus:outline-none">
+                            <span class="font-medium text-silver">Who can participate in the competition?</span>
+                            <i class="fas fa-chevron-down text-gold transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden mt-2 text-gray-300">
+                            The competition is open to inventors of all ages and backgrounds worldwide. Individuals, teams, startups, and even established companies with new inventions are welcome to participate. Student inventors are particularly encouraged to join.
+                        </div>
+                    </div>
+                    <div class="border-b border-silver border-opacity-30 pb-4">
+                        <button class="faq-btn flex justify-between items-center w-full text-left focus:outline-none">
+                            <span class="font-medium text-silver">What types of inventions are eligible?</span>
+                            <i class="fas fa-chevron-down text-gold transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden mt-2 text-gray-300">
+                            We accept all types of inventions across various fields including technology, healthcare, environmental solutions, consumer products, and more. The invention must be original, and while prototypes are preferred, well-documented concepts with clear implementation plans are also acceptable.
+                        </div>
+                    </div>
+                    <div class="border-b border-silver border-opacity-30 pb-4">
+                        <button class="faq-btn flex justify-between items-center w-full text-left focus:outline-none">
+                            <span class="font-medium text-silver">What is the judging process?</span>
+                            <i class="fas fa-chevron-down text-gold transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden mt-2 text-gray-300">
+                            Submissions go through three rounds of evaluation: initial screening by our technical team, evaluation by category-specific expert panels, and final judging by our prestigious jury. The exhibition event includes public voting which contributes to special recognition awards.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Credits Section -->
+    <section id="credits" class="py-20 px-4 sm:px-6 lg:px-8 bg-secondary">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gold mb-4">Credits & Partners</h2>
+                <div class="w-20 h-1 bg-silver mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 mb-16">
+                <div>
+                    <h3 class="text-2xl font-semibold text-silver mb-6">Organized By</h3>
+                    <div class="bg-primary bg-opacity-50 rounded-xl p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="text-3xl text-gold mr-4"><i class="fas fa-atom"></i></div>
+                            <h4 class="text-xl font-bold gradient-text">Global Innovation Foundation</h4>
+                        </div>
+                        <p class="text-gray-300">A non-profit organization dedicated to fostering innovation and supporting inventors worldwide since 2005.</p>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-semibold text-silver mb-6">Sponsored By</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-primary bg-opacity-50 rounded-xl p-4 flex items-center justify-center h-24">
+                            <span class="text-xl font-bold text-silver">TechGiant Inc.</span>
+                        </div>
+                        <div class="bg-primary bg-opacity-50 rounded-xl p-4 flex items-center justify-center h-24">
+                            <span class="text-xl font-bold text-silver">FutureVentures</span>
+                        </div>
+                        <div class="bg-primary bg-opacity-50 rounded-xl p-4 flex items-center justify-center h-24">
+                            <span class="text-xl font-bold text-silver">InventCorp</span>
+                        </div>
+                        <div class="bg-primary bg-opacity-50 rounded-xl p-4 flex items-center justify-center h-24">
+                            <span class="text-xl font-bold text-silver">IdeaBank</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-primary rounded-xl p-8 shadow-lg">
+                <h3 class="text-2xl font-bold text-gold mb-6 text-center">Meet The Team</h3>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="text-center">
+                        <div class="w-32 h-32 mx-auto mb-4 rounded-full bg-gradient-to-br from-gold to-silver p-1">
+                            <div class="w-full h-full rounded-full bg-primary bg-cover bg-center" style="background-image: url('https://randomuser.me/api/portraits/women/65.jpg');"></div>
+                        </div>
+                        <h4 class="font-bold text-silver">Dr. Sarah Chen</h4>
+                        <p class="text-gray-300 text-sm">Competition Director</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-32 h-32 mx-auto mb-4 rounded-full bg-gradient-to-br from-gold to-silver p-1">
+                            <div class="w-full h-full rounded-full bg-primary bg-cover bg-center" style="background-image: url('https://randomuser.me/api/portraits/men/32.jpg');"></div>
+                        </div>
+                        <h4 class="font-bold text-silver">Mark Johnson</h4>
+                        <p class="text-gray-300 text-sm">Head of Judging</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-32 h-32 mx-auto mb-4 rounded-full bg-gradient-to-br from-gold to-silver p-1">
+                            <div class="w-full h-full rounded-full bg-primary bg-cover bg-center" style="background-image: url('https://randomuser.me/api/portraits/women/44.jpg');"></div>
+                        </div>
+                        <h4 class="font-bold text-silver">Lisa Rodriguez</h4>
+                        <p class="text-gray-300 text-sm">Participant Relations</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-32 h-32 mx-auto mb-4 rounded-full bg-gradient-to-br from-gold to-silver p-1">
+                            <div class="w-full h-full rounded-full bg-primary bg-cover bg-center" style="background-image: url('https://randomuser.me/api/portraits/men/75.jpg');"></div>
+                        </div>
+                        <h4 class="font-bold text-silver">David Kim</h4>
+                        <p class="text-gray-300 text-sm">Sponsorship Coordinator</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold gradient-text mb-4">INNOVATEX</h3>
+                    <p class="text-gray-400 text-sm">Celebrating and supporting global innovation since 2010.</p>
+                </div>
+                <div>
+                    <h4 class="text-silver font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-gold transition text-sm">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-gold transition text-sm">About</a></li>
+                        <li><a href="#process" class="text-gray-400 hover:text-gold transition text-sm">Process</a></li>
+                        <li><a href="#prizes" class="text-gray-400 hover:text-gold transition text-sm">Prizes</a></li>
+                        <li><a href="#register" class="text-gray-400 hover:text-gold transition text-sm">Register</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-silver font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-gold mr-2 mt-1"></i>
+                            <span>123 Innovation Drive, Tech City, NY 10001</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone text-gold mr-2 mt-1"></i>
+                            <span>+1 (555) 123-4567</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope text-gold mr-2 mt-1"></i>
+                            <span>info@innovex.com</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-silver font-semibold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-gold transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-gold transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-gold transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-gold transition"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-gold transition"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    <div class="mt-6">
+                        <h4 class="text-silver font-semibold mb-2">Newsletter</h4>
+                        <div class="flex">
+                            <input type="email" placeholder="Your email" class="bg-primary text-gray-200 px-3 py-2 rounded-l focus:outline-none focus:ring-1 focus:ring-gold w-full">
+                            <button class="bg-gold hover:bg-darkgold text-primary px-4 py-2 rounded-r transition"><i class="fas fa-paper-plane"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm mb-4 md:mb-0">© 2023 InnovateX. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-500 hover:text-gold transition text-sm">Privacy Policy</a>
+                    <a href="#" class="text-gray-500 hover:text-gold transition text-sm">Terms of Service</a>
+                    <a href="#" class="text-gray-500 hover:text-gold transition text-sm">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                mobileMenu.classList.add('hidden');
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // FAQ accordion
+        const faqBtns = document.querySelectorAll('.faq-btn');
+        
+        faqBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const content = btn.nextElementSibling;
+                const icon = btn.querySelector('i');
+                
+                content.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+        
+        // Form submission
+        const registrationForm = document.getElementById('registrationForm');
+        
+        registrationForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            
+            // In a real application, you would send this data to a server
+            alert(`Thank you, ${name}! Your registration has been received. We've sent a confirmation to ${email}.`);
+            
+            // Reset form
+            registrationForm.reset();
+        });
+        
+        // Scroll reveal animation
+        const observerOptions = {
+            threshold: 0.1
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fadeIn');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
 </body>
 </html>
