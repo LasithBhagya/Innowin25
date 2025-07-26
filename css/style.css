@@ -1,159 +1,39 @@
-* {
-    margin: 0;
-    padding: 0;
+.gradient-text {
+    background: linear-gradient(90deg, #FFD700, #fce5b4);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
-.container {
-    width: 100%;
-    height: 100%;
-    overflow-x: hidden;
-    overflow-y: auto;
-    background: var(--dark-blue0);
+.section-divider {
+    height: 100px;
+    background: linear-gradient(to bottom, #1A1A1A, transparent);
+}
+
+.flip-card {
+    perspective: 1000px;
+}
+
+.flip-card-inner {
+    transition: transform 0.8s;
     transform-style: preserve-3d;
-    perspective: 20px;
 }
 
-/* Top-Bar */
-.top-bar,
-.top-bar > *,
-.top-bar-holder > * {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.top-bar {
-    /* position: absolute; */
-    /* top: 0; */
-    width: 100%;
-    height: 10%;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2));
-    backdrop-filter: blur(24px);
-    overflow-x: hidden;
-    z-index: 10;
-}
-.top-bar > .top-bar-holder {
-    width: 70%;
-    height: 80%;
-    justify-content: space-between;
-}
-.top-bar > .top-bar-holder > .mcLogo,
-.top-bar > .top-bar-holder > .riduLogo {
-    aspect-ratio: 1;
-    height: 100%;
-}
-.top-bar > .top-bar-holder > * > #logo {
-    width: auto;
-    height: 100%;
-}
-.top-bar > .top-bar-holder > * > p {
-    color: var(--white);
-}
-.top-bar > .top-bar-holder > .sections {
-    width: 50%;
-    height: 100%;
-    border-radius: 1rem;
-    background-color: #333;
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
 }
 
+.flip-card-front, .flip-card-back {
+    backface-visibility: hidden;
+}
 
-/* Home Section */
-#home {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 88%;
-    overflow-y: auto;
-    overflow-x: hidden;
-    /* background-color: #111; */
+.flip-card-back {
+    transform: rotateY(180deg);
 }
-#homeBackground {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    object-fit: cover;
-    filter: brightness(0.5);
-    transform: translateZ(-20px) scale(2);
-    z-index: -10;
-}
-#home > .element-container {
-    display: flex;
-    align-items: center;
-    aspect-ratio: 1.6;
-    /* width: 60%; */
-    height: 60vh;
-    border-radius: 1rem;
-    box-sizing: border-box;
-    border: 1px solid var(--dark-orange0);
-    box-shadow: 0 0 24px 0 #000;
-    background-color: #111;
-}
-#home > .element-container > .text-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 60%;
-    height: 100%;
-    padding: 1rem;
-    box-sizing: border-box;
-    border-radius: 1rem 0 0 1rem;
-    /* background-color: #222; */
-}
-#home > .element-container > .text-container > h1 {
-    color: var(--white);
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 6vh;
-    margin-bottom: 1rem;
-}
-#home > .element-container > .text-container > p {
-    width: 70%;
-    text-align: justify;
-    color: var(--white1);
-    font-family: monospace;
-    font-size: 1.6vh;
-}
-#home > .element-container > .text-container > .buttons {
-    width: 60%;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin-top: 3rem;
-}
-#home > .element-container > .text-container > .buttons > a {
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    align-content: center;
-    font-family: monospace;
-    font-size: 2vh;
-    text-decoration: none;
-}
-#home > .element-container > .text-container > .buttons > a:hover {
-    cursor: pointer;
-}
-#home > .element-container > .text-container > .buttons > #learnMore {
-    height: 4vh;
-    box-sizing: border-box;
-    border: 1px solid lightslategray;
-    background-color: transparent;
-    color: gray;
-}
-#home > .element-container > .text-container > .buttons > #register {
-    height: 5vh;
-    box-sizing: border-box;
-    border: 1px solid var(--dark-orange0);
-    color: var(--white);
-    background-color: var(--orange0);
-}
-#home > .element-container > .divider {
-    width: 2px;
-    height: 80%;
-    background-color: var(--dark-orange0);
-}
-#home > .element-container > .image-container {
-    width: 40%;
-    height: 100%;
-    border-radius: 0 1rem 1rem 0;
-    /* background-color: #333; */
+
+.parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
