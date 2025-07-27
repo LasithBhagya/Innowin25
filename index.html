@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Innowin '25 - Invention Competition</title>
+    <link rel="icon" href="imgs/MC logo 64x64.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="imgs/MC logo 64x64.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -27,7 +29,7 @@
 </head>
 <body class="bg-primary text-gray-200 font-sans overflow-x-hidden">
     <!-- Navigation -->
-    <nav class="fixed w-full bg-black bg-opacity-70 z-50 shadow-lg backdrop-blur-xl">
+    <nav class="fixed w-full bg-black bg-opacity-60 z-50 shadow-lg backdrop-blur-xl">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
@@ -62,7 +64,7 @@
 
     <!-- Home Section -->
     <!-- <section id="home" class="pt-24 pb-32 px-4 sm:px-6 lg:px-8 parallax" style="background-image: linear-gradient(rgba(26, 26, 26, 0.8), rgba(26, 26, 26, 0.4)), url('https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"> -->
-    <section id="home" class="pt-24 pb-32 px-4 sm:px-6 lg:px-8 parallax" style="background-image: linear-gradient(rgba(26, 26, 26, 0.8), rgba(26, 26, 26, 0.4)), url('imgs/homeBackground.jpg');">
+    <section id="home" class="pt-24 pb-32 px-4 sm:px-6 lg:px-8 parallax" style="background-image: linear-gradient(rgba(4, 4, 4, 0.8), rgba(4, 4, 4, 0.6)), url('imgs/homeBackground.jpg');">
         <div class="max-w-7xl mx-auto text-center">
             <h1 class="text-4xl md:text-6xl font-bold mb-6 gradient-text">Innowin '25</h1>
             <h2 class="text-1xl md:text-2xl font-semibold text-silver mb-8">Mahanama College’s signature invention exhibition,<br>uniting creativity, curiosity, and the power to shape the future.</h2>
@@ -106,7 +108,7 @@
                         <!-- <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Inventors working" class="rounded-lg w-full h-auto"> -->
                         <img src="imgs/aboutPageImage.jpg" alt="A robot" class="rounded-lg w-full h-auto">
                     </div>
-                    <div class="absolute -bottom-6 -right-6 bg-accent text-white p-4 rounded-lg shadow-lg w-auto">
+                    <div class="absolute -bottom-6 -right-4 bg-accent text-white p-4 rounded-lg shadow-lg w-auto">
                         <h4 class="font-bold text-gold mb-2">Key Dates</h4>
                         <p class="text-sm">Registration Deadline: Aug 9, 2025</p>
                         <p class="text-sm">Submission Deadline: Sep 6, 2025</p>
@@ -338,8 +340,13 @@
                 <div class="w-20 h-1 bg-silver mx-auto"></div>
             </div>
             
-            <div class="mb-8 flex justify-center w-full">
-                <a href="https://forms.gle/vsudhYbuMBU133Zb8" class="border border-silver hover:border-gold hover:bg-gold hover:text-black text-silver font-bold py-3 px-8 rounded-full transition duration-400 transform ease-in-out">Get the application</a>
+            <div class="flex justify-center flex-row mb-6">
+                <input type="checkbox" name="r&g" id="rulesAndGuidelines" class="scale-150">
+                <span class="text-silver ml-4">I agree to the <a class="text-darkgold cursor-pointer hover:text-gold" href="https://drive.google.com/file/d/1ZLNhvpKJhoq3TqB0RLziFnV-Syv2seZU/view?usp=sharing" target="_blank" rel="noopener noreferrer">Rules & Guidelines</a>. I understand that violating them may result in disqualification.</span>
+            </div>
+
+            <div class="mb-12 flex justify-center w-full">
+                <a id="applicationLink" href="https://google.com" target="_blank" rel="noopener noreferrer" class="border pointer-events-none cursor-not-allowed border-darksilver text-darksilver cursor-default font-bold py-3 px-8 rounded-full transition duration-400 transform ease-in-out">Get the application</a>
             </div>
 
             <div class="bg-secondary rounded-xl shadow-xl overflow-hidden">
@@ -504,22 +511,8 @@
                         <div class="w-32 h-32 mx-auto mb-4 rounded-full bg-gradient-to-br from-gold to-silver p-1">
                             <div class="w-full h-full rounded-full bg-primary bg-cover bg-center" style="background-image: url(imgs/avatar.jpg);"></div>
                         </div>
-                        <h4 class="font-bold text-silver">Gemunu De Silva</h4>
-                        <p class="text-darksilver text-sm">Vice President of RIDU</p>
-                    </div>
-                    <div class="text-center">
-                        <div class="w-32 h-32 mx-auto mb-4 rounded-full bg-gradient-to-br from-gold to-silver p-1">
-                            <div class="w-full h-full rounded-full bg-primary bg-cover bg-center" style="background-image: url(imgs/avatar.jpg);"></div>
-                        </div>
                         <h4 class="font-bold text-silver">Yugeeth Wenuka</h4>
                         <p class="text-darksilver text-sm">Secretary of RIDU</p>
-                    </div>
-                    <div class="text-center">
-                        <div class="w-32 h-32 mx-auto mb-4 rounded-full bg-gradient-to-br from-gold to-silver p-1">
-                            <div class="w-full h-full rounded-full bg-primary bg-cover bg-center" style="background-image: url(imgs/avatar.jpg);"></div>
-                        </div>
-                        <h4 class="font-bold text-silver">Menuka Hansira</h4>
-                        <p class="text-darksilver text-sm">Vice Secretary of RIDU</p>
                     </div>
                     <div class="text-center">
                         <div class="w-32 h-32 mx-auto mb-4 rounded-full bg-gradient-to-br from-gold to-silver p-1">
@@ -532,8 +525,8 @@
                         <div class="w-32 h-32 mx-auto mb-4 rounded-full bg-gradient-to-br from-gold to-silver p-1">
                             <div class="w-full h-full rounded-full bg-primary bg-cover bg-center" style="background-image: url(imgs/avatar.jpg);"></div>
                         </div>
-                        <h4 class="font-bold text-silver">Diluj Chathreesha</h4>
-                        <p class="text-darksilver text-sm">Vice Treasurer of RIDU</p>
+                        <h4 class="font-bold text-silver">Lasith Bhagya</h4>
+                        <p class="text-darksilver text-sm">Chief Editor of RIDU</p>
                     </div>
                     <div class="text-center">
                         <div class="w-32 h-32 mx-auto mb-4 rounded-full bg-gradient-to-br from-gold to-silver p-1">
@@ -546,8 +539,22 @@
                         <div class="w-32 h-32 mx-auto mb-4 rounded-full bg-gradient-to-br from-gold to-silver p-1">
                             <div class="w-full h-full rounded-full bg-primary bg-cover bg-center" style="background-image: url(imgs/avatar.jpg);"></div>
                         </div>
-                        <h4 class="font-bold text-silver">Lasith Bhagya</h4>
-                        <p class="text-darksilver text-sm">Chief Editor of RIDU</p>
+                        <h4 class="font-bold text-silver">Gemunu De Silva</h4>
+                        <p class="text-darksilver text-sm">Vice President of RIDU</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-32 h-32 mx-auto mb-4 rounded-full bg-gradient-to-br from-gold to-silver p-1">
+                            <div class="w-full h-full rounded-full bg-primary bg-cover bg-center" style="background-image: url(imgs/avatar.jpg);"></div>
+                        </div>
+                        <h4 class="font-bold text-silver">Menuka Hansira</h4>
+                        <p class="text-darksilver text-sm">Vice Secretary of RIDU</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-32 h-32 mx-auto mb-4 rounded-full bg-gradient-to-br from-gold to-silver p-1">
+                            <div class="w-full h-full rounded-full bg-primary bg-cover bg-center" style="background-image: url(imgs/avatar.jpg);"></div>
+                        </div>
+                        <h4 class="font-bold text-silver">Diluj Chathreesha</h4>
+                        <p class="text-darksilver text-sm">Vice Treasurer of RIDU</p>
                     </div>
                 </div>
             </div>
@@ -596,17 +603,10 @@
                         <a href="#" class="text-gray-400 hover:text-gold transition"><i class="fab fa-instagram"></i></a>
                         <a href="#" class="text-gray-400 hover:text-gold transition"><i class="fab fa-youtube"></i></a>
                     </div>
-                    <!-- <div class="mt-6">
-                        <h4 class="text-silver font-semibold mb-2">Newsletter</h4>
-                        <div class="flex">
-                            <input type="email" placeholder="Your email" class="bg-primary text-gray-200 px-3 py-2 rounded-l focus:outline-none focus:ring-1 focus:ring-gold w-full">
-                            <button class="bg-gold hover:bg-darkgold text-primary px-4 py-2 rounded-r transition"><i class="fas fa-paper-plane"></i></button>
-                        </div>
-                    </div> -->
                 </div>
             </div>
             <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-500 text-sm mb-4 md:mb-0">© Lasith Bhagya. All rights reserved.</p>
+                <p class="text-gray-500 text-sm mb-4 md:mb-0">© LasithBhagya. All rights reserved.</p>
                 <div class="flex space-x-6">
                     <a href="#pp" class="text-gray-500 hover:text-gold transition text-sm">Privacy Policy</a>
                     <a href="#tos" class="text-gray-500 hover:text-gold transition text-sm">Terms of Service</a>

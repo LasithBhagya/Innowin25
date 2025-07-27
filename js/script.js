@@ -32,22 +32,23 @@ faqBtns.forEach(btn => {
     });
 });
 
-// Form submission
-// const registrationForm = document.getElementById('registrationForm');
+// Agree to Rules & Guidelines
+const checkbox = document.getElementById('rulesAndGuidelines');
+const link = document.getElementById('applicationLink');
 
-// registrationForm.addEventListener('submit', (e) => {
-//     e.preventDefault();
-    
-//     // Get form values
-//     const name = document.getElementById('name').value;
-//     const email = document.getElementById('email').value;
-    
-//     // In a real application, you would send this data to a server
-//     alert(`Thank you, ${name}! Your registration has been received. We've sent a confirmation to ${email}.`);
-    
-//     // Reset form
-//     registrationForm.reset();
-// });
+checkbox.addEventListener('change', () => {
+    if (checkbox.checked) {
+        // Enable the link
+        link.classList.remove('pointer-events-none', 'cursor-not-allowed', 'border-darksilver', 'text-darksilver', 'cursor-default');
+        link.classList.add('cursor-pointer', 'border-gold', 'hover:border-darkgold', 'hover:bg-gold', 'hover:text-black', 'text-gold');
+        link.setAttribute('href', 'https://forms.gle/vsudhYbuMBU133Zb8');
+    } else {
+        // Disable the link
+        link.classList.add('pointer-events-none', 'cursor-not-allowed', 'border-darksilver', 'text-darksilver', 'cursor-default');
+        link.classList.remove('cursor-pointer', 'border-gold', 'hover:border-silver', 'hover:bg-gold', 'hover:text-black', 'text-gold');
+        link.setAttribute('href', 'https:///google.com');
+    }
+});
 
 // Scroll reveal animation
 const observerOptions = {
