@@ -9,23 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        gold: '#FFD700',
-                        darkgold: '#D4AF37',
-                        silver: '#C0C0C0',
-                        darksilver: '#A8A8A8',
-                        primary: '#1A1A1A',
-                        secondary: '#2D2D2D',
-                        accent: '#4A148C'
-                    }
-                }
-            }
-        }
-    </script>
+    <script src="js/tailwindConf.js"></script>
 </head>
 <body class="bg-primary text-gray-200 font-sans overflow-x-hidden">
     <!-- Navigation -->
@@ -40,7 +24,7 @@
                     <a href="#home" class="text-gold hover:text-darkgold transition">Home</a>
                     <a href="#about" class="text-silver hover:text-darksilver transition">About</a>
                     <a href="#process" class="text-silver hover:text-darksilver transition">Process</a>
-                    <a href="#prizes" class="text-silver hover:text-darksilver transition">Prizes</a>
+                    <a href="#gallery" class="text-silver hover:text-darksilver transition">Gallery</a>
                     <a href="#register" class="text-gold hover:text-darkgold transition">Register</a>
                     <a href="#credits" class="text-silver hover:text-darksilver transition">Credits</a>
                 </div>
@@ -56,14 +40,13 @@
             <a href="#home" class="block py-2 text-gold">Home</a>
             <a href="#about" class="block py-2 text-silver">About</a>
             <a href="#process" class="block py-2 text-silver">Process</a>
-            <a href="#prizes" class="block py-2 text-silver">Prizes</a>
+            <a href="#gallery" class="block py-2 text-silver">Gallery</a>
             <a href="#register" class="block py-2 text-gold">Register</a>
             <a href="#credits" class="block py-2 text-silver">Credits</a>
         </div>
     </nav>
 
     <!-- Home Section -->
-    <!-- <section id="home" class="pt-24 pb-32 px-4 sm:px-6 lg:px-8 parallax" style="background-image: linear-gradient(rgba(26, 26, 26, 0.8), rgba(26, 26, 26, 0.4)), url('https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"> -->
     <section id="home" class="pt-24 pb-32 px-4 sm:px-6 lg:px-8 parallax" style="background-image: linear-gradient(rgba(4, 4, 4, 0.8), rgba(4, 4, 4, 0.6)), url('imgs/homeBackground.jpg');">
         <div class="max-w-7xl mx-auto text-center">
             <h1 class="text-4xl md:text-6xl font-bold mb-6 gradient-text">Innowin '25</h1>
@@ -105,7 +88,6 @@
                 </div>
                 <div class="relative">
                     <div class="bg-primary p-2 rounded-lg shadow-xl">
-                        <!-- <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Inventors working" class="rounded-lg w-full h-auto"> -->
                         <img src="imgs/aboutPageImage.jpg" alt="A robot" class="rounded-lg w-full h-auto">
                     </div>
                     <div class="absolute -bottom-6 -right-4 bg-accent text-white p-4 rounded-lg shadow-lg w-auto">
@@ -203,7 +185,7 @@
     </section>
 
     <!-- Prizes Section -->
-    <section id="prizes" class="py-20 px-4 sm:px-6 lg:px-8 bg-secondary">
+    <!-- <section id="prizes" class="py-20 px-4 sm:px-6 lg:px-8 bg-secondary">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold text-gold mb-4">Prizes & Benefits</h2>
@@ -211,7 +193,6 @@
             </div>
             
             <div class="grid md:grid-cols-3 gap-8 mb-16">
-                <!-- Gold Prize -->
                 <div class="relative bg-gradient-to-b from-gold to-darkgold rounded-xl overflow-hidden shadow-2xl transform transition duration-500 hover:scale-105">
                     <div class="absolute top-0 left-0 w-full h-1 bg-primary"></div>
                     <div class="p-8 text-center">
@@ -239,7 +220,6 @@
                     </div>
                 </div>
                 
-                <!-- Silver Prize -->
                 <div class="relative bg-gradient-to-b from-silver to-darksilver rounded-xl overflow-hidden shadow-2xl transform transition duration-500 hover:scale-105">
                     <div class="absolute top-0 left-0 w-full h-1 bg-primary"></div>
                     <div class="p-8 text-center">
@@ -267,7 +247,6 @@
                     </div>
                 </div>
                 
-                <!-- Bronze Prize -->
                 <div class="relative bg-gradient-to-b from-amber-600 to-amber-800 rounded-xl overflow-hidden shadow-2xl transform transition duration-500 hover:scale-105">
                     <div class="absolute top-0 left-0 w-full h-1 bg-primary"></div>
                     <div class="p-8 text-center">
@@ -330,6 +309,20 @@
                 </div>
             </div>
         </div>
+    </section> -->
+
+    <!-- Our Gallery -->
+    <section id="gallery" class="py-20 px-4 sm:px-6 lg:px-8 bg-secondary">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gold mb-4">Our Gallery</h2>
+                <div class="w-20 h-1 bg-silver mx-auto"></div>
+            </div>
+            
+            <div class="flex justify-center items-center">
+                <h4 class="text-darksilver text-lg font-bold">Coming Soon.</h4>
+            </div>
+        </div>
     </section>
 
     <!-- Registration Section -->
@@ -342,11 +335,11 @@
             
             <div class="flex justify-center flex-row mb-6">
                 <input type="checkbox" name="r&g" id="rulesAndGuidelines" class="scale-150">
-                <span class="text-silver ml-4">I agree to the <a class="text-darkgold cursor-pointer hover:text-gold" href="https://drive.google.com/file/d/1ZLNhvpKJhoq3TqB0RLziFnV-Syv2seZU/view?usp=sharing" target="_blank" rel="noopener noreferrer">Rules & Guidelines</a>. I understand that violating them may result in disqualification.</span>
+                <label for="rulesAndGuidelines" class="text-silver ml-4">I agree to the <a class="text-darkgold cursor-pointer hover:text-gold" href="https://drive.google.com/file/d/1ZLNhvpKJhoq3TqB0RLziFnV-Syv2seZU/view?usp=sharing" target="_blank" rel="noopener noreferrer">Rules & Guidelines</a>. I understand that violating them may result in disqualification.</labe>
             </div>
 
-            <div class="mb-12 flex justify-center w-full">
-                <a id="applicationLink" href="https://google.com" target="_blank" rel="noopener noreferrer" class="border pointer-events-none cursor-not-allowed border-darksilver text-darksilver cursor-default font-bold py-3 px-8 rounded-full transition duration-400 transform ease-in-out">Get the application</a>
+            <div id="beforehelp" class="mb-12 flex justify-center w-full">
+                <a id="applicationLink" href="404.html" target="_blank" rel="noopener noreferrer" class="border pointer-events-none cursor-not-allowed border-darksilver text-darksilver cursor-default font-bold py-3 px-8 rounded-full transition duration-400 transform ease-in-out">Get the application</a>
             </div>
 
             <div class="bg-secondary rounded-xl shadow-xl overflow-hidden">
@@ -456,7 +449,7 @@
     <section id="credits" class="py-20 px-4 sm:px-6 lg:px-8 bg-secondary">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gold mb-4">Credits & Partners</h2>
+                <h2 class="text-3xl md:text-4xl font-bold text-gold mb-4">Credits</h2>
                 <div class="w-20 h-1 bg-silver mx-auto"></div>
             </div>
             
@@ -575,7 +568,7 @@
                         <li><a href="#home" class="text-gray-400 hover:text-gold transition text-sm">Home</a></li>
                         <li><a href="#about" class="text-gray-400 hover:text-gold transition text-sm">About</a></li>
                         <li><a href="#process" class="text-gray-400 hover:text-gold transition text-sm">Process</a></li>
-                        <li><a href="#prizes" class="text-gray-400 hover:text-gold transition text-sm">Prizes</a></li>
+                        <li><a href="#gallery" class="text-gray-400 hover:text-gold transition text-sm">Gallery</a></li>
                         <li><a href="#register" class="text-gray-400 hover:text-gold transition text-sm">Register</a></li>
                     </ul>
                 </div>
@@ -599,18 +592,18 @@
                 <div>
                     <h4 class="text-silver font-semibold mb-4">Follow Us</h4>
                     <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-gold transition"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-gold transition"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-gold transition"><i class="fab fa-youtube"></i></a>
+                        <a href="404.html" class="text-gray-400 hover:text-gold transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="404.html" class="text-gray-400 hover:text-gold transition"><i class="fab fa-instagram"></i></a>
+                        <a href="404.html" class="text-gray-400 hover:text-gold transition"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
             </div>
             <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
                 <p class="text-gray-500 text-sm mb-4 md:mb-0">© LasithBhagya. All rights reserved.</p>
                 <div class="flex space-x-6">
-                    <a href="#pp" class="text-gray-500 hover:text-gold transition text-sm">Privacy Policy</a>
-                    <a href="#tos" class="text-gray-500 hover:text-gold transition text-sm">Terms of Service</a>
-                    <a href="#cp" class="text-gray-500 hover:text-gold transition text-sm">Cookie Policy</a>
+                    <a href="404.html" class="text-gray-500 hover:text-gold transition text-sm">Privacy Policy</a>
+                    <a href="404.html" class="text-gray-500 hover:text-gold transition text-sm">Terms of Service</a>
+                    <a href="404.html" class="text-gray-500 hover:text-gold transition text-sm">Cookie Policy</a>
                 </div>
             </div>
         </div>

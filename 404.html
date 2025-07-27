@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Wrong entry</title>
+    <link rel="icon" href="imgs/MC logo 64x64.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="imgs/MC logo 64x64.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/tailwindConf.js"></script>
+</head>
+<body class="bg-primary text-darksilver font-sans overflow-x-hidden">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-black bg-opacity-60 z-50 shadow-lg backdrop-blur-xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <img src="imgs/MC logo.png" alt="MC" class="h-[70%] mr-6">
+                    <span class="text-2xl font-bold gradient-text">Innowin '25</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gold hover:text-darkgold transition">Home</a>
+                    <a href="#about" class="text-silver hover:text-darksilver transition">About</a>
+                    <a href="#process" class="text-silver hover:text-darksilver transition">Process</a>
+                    <a href="#prizes" class="text-silver hover:text-darksilver transition">Prizes</a>
+                    <a href="#register" class="text-gold hover:text-darkgold transition">Register</a>
+                    <a href="#credits" class="text-silver hover:text-darksilver transition">Credits</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="menuBtn" class="text-gold focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-secondary pb-4 px-4">
+            <a href="#home" class="block py-2 text-gold">Home</a>
+            <a href="#about" class="block py-2 text-silver">About</a>
+            <a href="#process" class="block py-2 text-silver">Process</a>
+            <a href="#prizes" class="block py-2 text-silver">Prizes</a>
+            <a href="#register" class="block py-2 text-gold">Register</a>
+            <a href="#credits" class="block py-2 text-silver">Credits</a>
+        </div>
+    </nav>
+
+    <!-- 404 Page Not Found -->
+     <section id="404" class="pt-24 pb-32 px-4 sm:px-6 lg:px-8 bg-[#222]">
+        <div class="max-w-7xl mx-auto text-center">
+            <div class="">
+                <h1 class="text-gold text-8xl md:text-9xl font-bold">404</h1>
+                <p class="text-darkgold text-2xl md:text-3xl">Page not found</p>
+                <p class="text-darksilver mt-8">The page you're looking for doesn't exist or has been moved.<br>Don't worry though, we are working on it!</p>
+                <div class="mt-12 flex flex-row justify-center items-center space-x-6">
+                    <a href="index.html" class="bg-gold text-primary font-bold py-3 px-8 rounded-full transition duration-300 transform box-shadow">Return Home</a>
+                    <a href="index.html#beforehelp" class="bg-transparent border border-darkgold text-gold py-3 px-8 rounded-full">Contact Support</a>
+                </div>
+            </div>
+        </div>
+     </section>
+
+     <!-- Footer -->
+    <footer class="bg-black py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold gradient-text mb-4">Innowin '25</h3>
+                    <p class="text-gray-400 text-sm">Mahanama College’s signature invention exhibition.</p>
+                </div>
+                <div>
+                    <h4 class="text-silver font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-gold transition text-sm">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-gold transition text-sm">About</a></li>
+                        <li><a href="#process" class="text-gray-400 hover:text-gold transition text-sm">Process</a></li>
+                        <li><a href="#prizes" class="text-gray-400 hover:text-gold transition text-sm">Prizes</a></li>
+                        <li><a href="#register" class="text-gray-400 hover:text-gold transition text-sm">Register</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-silver font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-gold mr-2 mt-1"></i>
+                            <span>WV43+FW2, R.A. De Mel Mawatha, Colombo</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone text-gold mr-2 mt-1"></i>
+                            <span>+94 (12) 123 123 4</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope text-gold mr-2 mt-1"></i>
+                            <span>ridu.of.mc@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-silver font-semibold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="404.html" class="text-gray-400 hover:text-gold transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="404.html" class="text-gray-400 hover:text-gold transition"><i class="fab fa-instagram"></i></a>
+                        <a href="404.html" class="text-gray-400 hover:text-gold transition"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm mb-4 md:mb-0">© LasithBhagya. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#pp" class="text-gray-500 hover:text-gold transition text-sm">Privacy Policy</a>
+                    <a href="#tos" class="text-gray-500 hover:text-gold transition text-sm">Terms of Service</a>
+                    <a href="#cp" class="text-gray-500 hover:text-gold transition text-sm">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/404.js"></script>
+</body>
+</html>

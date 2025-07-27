@@ -5,6 +5,10 @@
     color: transparent;
 }
 
+.box-shadow:hover {
+    box-shadow: 0 0 24px 2px #FFD700;
+}
+
 .section-divider {
     height: 100px;
     background: linear-gradient(to bottom, #1A1A1A, transparent);
