@@ -35,6 +35,7 @@ faqBtns.forEach(btn => {
 // Agree to Rules & Guidelines
 const checkbox = document.getElementById('rulesAndGuidelines');
 const link = document.getElementById('applicationLink');
+const enabledAttributes = ('cursor-pointer', 'border-gold', 'hover:border-darkgold', 'hover:bg-gold', 'hover:text-black', 'text-gold');
 
 checkbox.addEventListener('change', () => {
     if (checkbox.checked) {
